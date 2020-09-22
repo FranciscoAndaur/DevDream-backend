@@ -5,7 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
 
+Post.destroy_all
+
+Comment.destroy_all
 
 users = [{
     name: "taco",
@@ -21,20 +25,19 @@ users.each do |user|
     User.create(name: user[:name], email: user[:email], password_digest: user[:password_digest])
 end
 
-posts = [{
-    content: "I was doing yoga in the park and it began to rain, the rain was not rain though it was marshmallows.... I made Marshmallow angels.",
-    user_id: 1
-},{
-    content: "I dreamed I was the captain of a ship, we all wore red beanies, and the ocean was coffee",
-    user_id: 2
-},{
-    content: "I was tiny, the size of an ant. Living inside an avocado.",
-    user_id: 1
-},{
-    content: "Today I dreamt of a dark tunnel, Monica Belucci was there. We were having coffee",
-    user_id: 2
-}]
+p "seeding posts"
+Post1 = Post.create(content: "Dream 1", user_id: User.all.sample.id)
+Post2 = Post.create(content: "Dream 2", user_id: User.all.sample.id )
+Post3 = Post.create(content: "Dream 3", user_id: User.all.sample.id )
+Post5 = Post.create(content: "Dream 4", user_id: User.all.sample.id )
+Post6 = Post.create(content: "Dream 5", user_id: User.all.sample.id )
+Post7 = Post.create(content: "Dream 6", user_id: User.all.sample.id )
+p "seeded Posts"
 
-posts.each do |post|
-    Post.create(content: posts[:content], user_id: post[:user_id])
-end
+
+a = Comment.create(content: "oh wow", user_id: User.all.sample.id, post_id: Post.all.sample.id)
+b = Comment.create(content: "oh nice", user_id: User.all.sample.id, post_id: Post.all.sample.id)
+c = Comment.create(content: "oh dats cool", user_id: User.all.sample.id, post_id: Post.all.sample.id )
+d = Comment.create(content: "das scary", user_id: User.all.sample.id, post_id: Post.all.sample.id )
+e = Comment.create(content: "das hot", user_id: User.all.sample.id, post_id: Post.all.sample.id )
+f = Comment.create(content: "cool", user_id: User.all.sample.id, post_id: Post.all.sample.id )
