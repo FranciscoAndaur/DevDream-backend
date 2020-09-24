@@ -45,8 +45,14 @@ class UsersController < ApplicationController
         # before_action :authorized
         # @current_user
     def autologin
+        
         # if we find the user, send back the user as the response
-        render json: @current_user
+        user = User.find_by(id: session[:user_id])
+        if user
+           render json: user
+        else
+            render json: {message: "Not logged in"}, status: :unauthorized
+        end
     end
     
         # before_action :authorized
@@ -54,7 +60,7 @@ class UsersController < ApplicationController
         # if we find the user, update the user
         @current_user.update(image: params[:image], bio: params[:bio])
         # send back the updated user as the response
-        render json: @current_user
+        render json: @current_user     
     end
     
     def logout
