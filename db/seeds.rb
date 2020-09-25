@@ -26,12 +26,15 @@ users.each do |user|
 end
 
 p "seeding posts"
-Post1 = Post.create(content: "Dream 1", user_id: User.all.sample.id)
-Post2 = Post.create(content: "Dream 2", user_id: User.all.sample.id )
-Post3 = Post.create(content: "Dream 3", user_id: User.all.sample.id )
-Post5 = Post.create(content: "Dream 4", user_id: User.all.sample.id )
+Post1 = Post.create(content: "Today I dreamt of a dark tunnel, Monica Belucci was there.  We were having coffee'", user_id: User.all.sample.id)
+Post2 = Post.create(content: "I dreamed I was the captain of a ship, we all wore red beanies, and the ocean was coffee", user_id: User.all.sample.id )
+Post3 = Post.create(content: "I was doing yoga in the park and it began to rain,  the rain was not rain though it was marshmallows.... I made Marshmallow angels.", user_id: User.all.sample.id )
+Post5 = Post.create(content: "I was tiny, the size of an ant.  Living inside an avocado.", user_id: User.all.sample.id )
 Post6 = Post.create(content: "Dream 5", user_id: User.all.sample.id )
 Post7 = Post.create(content: "Dream 6", user_id: User.all.sample.id )
+Post8 = Post.create(content: "Dream 6", user_id: User.all.sample.id )
+Post9 = Post.create(content: "Dream 6", user_id: User.all.sample.id )
+Post10 = Post.create(content: "Dream 6", user_id: User.all.sample.id )
 p "seeded Posts"
 
 
