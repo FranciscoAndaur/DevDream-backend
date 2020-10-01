@@ -14,15 +14,17 @@ Comment.destroy_all
 users = [{
     name: "taco",
     email: "taco@taco.com",
-    password_digest: "asdf"
+    password: "asdf",
+    password_confirmation: "asdf",
 },{
     name: 'karem',
     email: "karem@karem.com",
-    password_digest: "clown"
+    password: "asdf",
+    password_confirmation: "asdf",
 }]
 
 users.each do |user|
-    User.create(name: user[:name], email: user[:email], password_digest: user[:password_digest])
+    User.create(name: user[:name], email: user[:email], password: user[:password], password_confirmation: user[:password_confirmation])
 end
 
 p "seeding posts"

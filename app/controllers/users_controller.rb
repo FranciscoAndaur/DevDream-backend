@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     def create
         # create a user in the database
-        
+       
         user = User.create(
             name: params[:name], 
             email: params[:email],
@@ -27,9 +27,10 @@ class UsersController < ApplicationController
     end
     
     def login
+        
         # find the user by their username
         user = User.find_by(name: params[:name])
-    
+        
         # if the user exists and their password matches, log them in
         if user && user.authenticate(params[:password])
             # save user_id in session so we can use it in future requests
@@ -57,10 +58,11 @@ class UsersController < ApplicationController
     
         # before_action :authorized
     def profile
+        
         # if we find the user, update the user
-        @current_user.update(image: params[:image], bio: params[:bio])
+        @user.update(name: params[:name], email: params[:email])
         # send back the updated user as the response
-        render json: @current_user     
+        render json: @user    
     end
     
     def logout
