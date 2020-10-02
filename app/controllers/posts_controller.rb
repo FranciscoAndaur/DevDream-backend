@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     end
 
     def destroy
+        
         post = Post.find_by(id: params[:id])
         post.destroy()
         render json: post
