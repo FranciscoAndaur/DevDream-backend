@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   get "/temp", to: 'application#temp'
   resources :comments
   resources :categories
